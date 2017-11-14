@@ -34,7 +34,7 @@ Finally, we built a recommendation system returns "real" items with details to a
 
 ### Data:
 
-Amazon's product meta data and review data are available to the public, and are excellent source for practising recommendation system. For our project, we sourced all the datasets from [Julian McAuley](http://jmcauley.ucsd.edu/data/amazon/).
+Amazon's product meta data and review data are available to the public, and are excellent source for practising recommendation system. For our project, we sourced the [review data](http://snap.stanford.edu/data/amazon/productGraph/categoryFiles/reviews_Beauty_5.json.gz) and [meta data](http://snap.stanford.edu/data/amazon/productGraph/categoryFiles/meta_Beauty.json.gz) of beauty products from [Julian McAuley](http://jmcauley.ucsd.edu/data/amazon/).
 
 ### Readings:
 
