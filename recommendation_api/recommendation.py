@@ -36,16 +36,16 @@ def getDF(path):
     return pd.DataFrame.from_dict(df, orient='index')
 
 if __name__ == "__main__":
-	pred = np.load('../models/Pred_purge_v1.0.npz')
+	pred = np.load('../airflow/dags/latent_factor_cf/logs/Pred_Matrix_2017-12-01T01:04:56.npz')
 	trained_model_purged=pred['arr_0']
 	print (trained_model_purged)
 	meta = getDF('../models/meta_Beauty.json')
 	for i in range(4):
 		meta['type_L'+str(i)] = meta['categories'].apply(lambda x: x[0][i] if i<len(x[0]) else np.nan)
-	f1=open('../models/user_map_afterNcore.json','r')
+	f1=open('../airflow/dags/latent_factor_cf/logs/user_map_afterNcore_2017-12-01T01:04:56','r')
 	user_id_map_dict=json.load(f1)
 	user_id_map=pd.DataFrame(user_id_map_dict)
-	f2=open('../models/item_map_afterNcore.json','r')
+	f2=open('../airflow/dags/latent_factor_cf/logs/item_map_afterNcore_2017-12-01T01:04:56.json','r')
 	item_id_map_dict=json.load(f2)
 	item_id_map=pd.DataFrame(item_id_map_dict)
 	intance=Recommender(Pred=trained_model_purged,meta=meta,user_map_afterNcore=user_id_map,item_map_afterNcore=item_id_map,N=10)
