@@ -14,6 +14,10 @@ This is a typical story of our (single) guy friends, who don't want to spend a s
 
 In this Amazon Beauty Products project, we constructed a recommendation system that makes recommendations of beauty products to Amazon users based on their purchase history. Here we will share our step-by-step script, and highlight the enhancement we made to improve our model. 
 
+After building up the collaborative filter, we are going to push the model into production by leveraging Apache Airflow and Flask. To simulate the validation and re-caliberation processing in production, the raw data is splited into four datasets along with the timeline,re-trained and validated batchly in Aiflow, which saved under the folder _airflow_. After the predicted user-item matrix is validated in Airflow, we push it into the recommandation api saved under the foler _recommendation_api_ and use Flask to return the prediction for individual user.
+
+
+
 # Algorithm
 
 We used factor based method to build this collaborative filtering system. We trained the model using Alternating Least Squares and Stochastic Gradient Descent respectively, and evaluated the performance on the both by comparing with the baseline Mean Square Error. It turns out Stochastic Gradient Descent having the better model performance. We also improved the model from several aspects:
@@ -29,6 +33,8 @@ We also enhanced Stochastic Gradient Descent by doing the following:
 <br/>
 
 Finally, we built a recommendation system returns "real" items with details to a specific user based on the prediction to test whether the prediction makes sense in an intuitive way. The recommendation system recommends the top ranked N items to a specific user along with what category of products did the user rate previously.
+
+# Production
 
 # Resources
 
