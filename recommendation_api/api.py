@@ -3,7 +3,6 @@ from flask_restful import Resource, Api
 from flask_jwt import JWT, jwt_required
 import datetime
 from recommendation import Recommender
-from linear_regression.linear_regression_predict import LinearRegressionPredictor
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'gfe_rd=cr&dcr=0&ei=ImotWvyjD9SK8Qfp3bDYAw'
@@ -40,16 +39,6 @@ def identity(payload):
 jwt = JWT(app, verify, identity)
 
 
-class PricePredictorResource(Resource):
-    @jwt_required()
-    def get(self, feature):
-        model = LinearRegressionPredictor()
-        feature = float(feature)
-        prediction  = model.predict(feature)
-        return prediction
-
-
-
 class ProductRecommenderResource(Resource):
     @jwt_required()
     def get(self, user_id):
@@ -58,7 +47,7 @@ class ProductRecommenderResource(Resource):
         return recommendations_list
 
 api.add_resource(ProductRecommenderResource, '/recommend/<user_id>')
-api.add_resource(PricePredictorResource, '/price/predict/<feature>')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

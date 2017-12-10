@@ -20,6 +20,6 @@ This will create a unique access token:
 you can now access the endpoint using the generated token:
 
 
-curl -X GET http://localhost:5000/api/v1/recommend/abc123  -H "Authorization: JWT  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1MTI5MjYwMTYsImV4cCI6MTUxMzUzMDgxNiwiaWF0IjoxNTEyOTI2MDE2LCJpZGVudGl0eSI6MTIzfQ.9g8NK4hHYZOyK64CjhB8LWVjc93GWHY-J\nQNDDUBe5A""
+curl -X GET http://localhost:5000/api/v1/recommend/[User ID to Predict]  -H "Authorization: JWT  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1MTI5MjYwMTYsImV4cCI6MTUxMzUzMDgxNiwiaWF0IjoxNTEyOTI2MDE2LCJpZGVudGl0eSI6MTIzfQ.9g8NK4hHYZOyK64CjhB8LWVjc93GWHY-J\nQNDDUBe5A""
 
 curl -X GET http://localhost:5000/api/v1/price/predict/100  -H "Authorization: JWT  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1MTI5MjYwMTYsImV4cCI6MTUxMzUzMDgxNiwiaWF0IjoxNTEyOTI2MDE2LCJpZGVudGl0eSI6MTIzfQ.9g8NK4hHYZOyK64CjhB8LWVjc93GWHY-J\nQNDDUBe5A""
