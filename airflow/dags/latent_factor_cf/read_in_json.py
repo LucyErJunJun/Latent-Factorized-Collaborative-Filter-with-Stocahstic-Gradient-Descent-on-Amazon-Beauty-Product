@@ -24,7 +24,7 @@ def getDF(path):
         i += 1
     return pd.DataFrame.from_dict(df, orient='index')
 
-def data_raw_data(path1='/home/ec2-user/airflow/dags/latent_factor_cf/raw1/*.json',path2='/home/ec2-user/airflow/dags/latent_factor_cf/raw2/*.json'):
+def data_raw_data(path1='/home/ec2-user/airflow/dags/latent_factor_cf/raw_data_past/*.json',path2='/home/ec2-user/airflow/dags/latent_factor_cf/raw_data_new/*.json'):
     # path1='./raw1/*.json'
 	path_1=sorted(glob.glob(path1))
 	path_2=sorted(glob.glob(path2))
