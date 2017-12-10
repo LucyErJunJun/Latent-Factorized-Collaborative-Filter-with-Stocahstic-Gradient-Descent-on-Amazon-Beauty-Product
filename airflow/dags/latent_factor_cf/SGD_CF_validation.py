@@ -34,7 +34,7 @@ if __name__ == '__main__':
 			print ("No New Input To Move")
 		else:
 			m=re.match('.*/(.*.json)',v[0])
-			shutil.move(v[0],'/home/ec2-user/airflow/dags/latent_factor_cf/raw1/'+m.group(1))
+			shutil.move(v[0],'/home/ec2-user/airflow/dags/latent_factor_cf/raw_data_past/'+m.group(1))
 
 
 
