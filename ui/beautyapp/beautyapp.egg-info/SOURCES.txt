@@ -1,0 +1,9 @@
+MANIFEST.in
+beautyapp/__init__.py
+beautyapp/beautyapp.py
+beautyapp/schema.sql
+beautyapp.egg-info/PKG-INFO
+beautyapp.egg-info/SOURCES.txt
+beautyapp.egg-info/dependency_links.txt
+beautyapp.egg-info/requires.txt
+beautyapp.egg-info/top_level.txt

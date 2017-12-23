@@ -1,0 +1,1 @@
+from .beautyapp import app

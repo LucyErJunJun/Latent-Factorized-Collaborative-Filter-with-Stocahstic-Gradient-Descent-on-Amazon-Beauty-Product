@@ -1,0 +1,3 @@
+graft beautyapp/templates
+graft beautyapp/static
+include beautyapp/schema.sql
